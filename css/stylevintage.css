@@ -17,8 +17,7 @@
 h1{
 	margin-top: 1rem;
 	text-align: center;
-	text-shadow: 1px 1px 4px rgba(176, 65, 65, 0.718);
-	color: rgb(253, 97, 97);
+	color: rgba(219, 187, 187, 0);
 }
 
 .contenedor {
@@ -35,38 +34,38 @@ h1{
 }
 
 .visor {
-	display: flex;
-	background-color: #b8dee6e3;
-	padding: 5px;
-	font-size: 40px;
+    display: flex;
+    background-color: #b8dee6e3;
+    padding: 6px;
+    font-size: 40px;
     font-family: 'visorcalculadora';
-	color: rgb(92, 91, 91);
-	width: 135px;
-	height: 30px;
-	justify-content: flex-end;
-	margin: 50px 25px 0 0;
-	max-width: 230px;
-	overflow: hidden;
+    color: rgb(92, 91, 91);
+    width: 134px;
+    height: 22px;
+    justify-content: flex-end;
+    margin: 58px 25px 0 0;
+    max-width: 230px;
+    overflow: hidden;
+	align-items: center;
 }
 
 .calculadora {
     display: grid;
-    margin: 30px 0 25px 30px;
+    margin: 30px 0 2px 30px;
     gap: 10px;
     grid-template-columns: 40px 40px 40px 60px;
     grid-template-rows: 20px 20px 20px 20px;
 }
 
-.botones,
-.operacion,
-.calcular, .adorno {
-	width: 20px;
-	height: 10px;
-	color: rgba(255, 255, 255, 0);
-	border-radius: 5px;
-	text-align: center;
-	padding: 5px 0 0 0;
-	user-select: none;
+.botones, .operacion, .calcular, .adorno {
+    width: 25px;
+    height: 10px;
+    color: rgba(255, 255, 255, 0);
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px 0 0 0;
+    user-select: none;
+    background-color: rgba(240, 248, 255, 0);
 }
 
 .sumar,
@@ -96,14 +95,17 @@ h1{
 }
 
 .cancelar {
-	background-color: rgb(255, 151, 151);
-	color: rgb(223, 26, 26);
-	width: 100%;
-	display: none;
+	position: relative;
+	top: -104px;
+	left: 120px;
+	background-color: rgba(255, 151, 151, 0);
+	color: rgba(223, 26, 26, 0);
+	width: 10%;
+
 }
 
 .cancelar:hover {
-	background-color: rgb(253, 97, 97);
-	color: rgb(255, 255, 255);
-	width: 100%;
+	background-color: rgba(255, 255, 255, 0.316);
+	color: rgba(255, 255, 255, 0);
+	width: 10%;
 }
