@@ -1,0 +1,111 @@
+@font-face {
+	font-family: "visorcalculadora";
+	src: url("fuente/digital-7-webfont.woff2") format("woff2"),
+		url("fuente/digital-7-webfont.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	margin-top: 1rem;
+	text-align: center;
+	text-shadow: 1px 1px 4px rgba(176, 65, 65, 0.718);
+	color: rgb(253, 97, 97);
+}
+
+.contenedor {
+	display: flex;
+	width: 260px;
+	background-color: rgb(222, 222, 222);
+	box-shadow: 3px 3px 7px rgb(152, 152, 152);
+	flex-direction: column;
+	margin: 5px auto;
+	align-items: center;
+	padding: 2px 0 2px 0;
+}
+
+.visor {
+	display: flex;
+	background-color: rgb(240, 240, 233);
+	padding: 5px;
+	box-shadow: 1px 1px 1px rgb(192, 189, 189);
+	font-size: 30px;
+	font-family: "visorcalculadora";
+	color: rgb(92, 91, 91);
+	width: 230px;
+	height: 30px;
+	justify-content: flex-end;
+	margin: 5px;
+	max-width: 230px;
+	overflow: hidden;
+}
+
+.calculadora {
+	display: grid;
+	grid-template-columns: 60px 60px 60px 60px;
+	grid-template-rows: 35px 35px 35px 35px;
+	gap: 5px;
+	justify-content: space-evenly;
+	padding: 2px;
+	justify-items: center;
+	align-content: space-evenly;
+	align-items: center;
+}
+
+.botones,
+.operacion,
+.calcular,
+.adorno {
+	background-color: beige;
+	width: 55px;
+	height: 30px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 4px rgb(135, 135, 135);
+	text-align: center;
+	padding: 5px 0 0 0;
+	user-select: none;
+}
+
+.sumar,
+.restar,
+.multiplicar,
+.dividir {
+	background-color: rgb(232, 232, 198);
+	color: rgb(0, 8, 255);
+	font-size: 20px;
+}
+
+.igual {
+	background-color: rgb(232, 232, 198);
+	color: rgb(2, 127, 0);
+	font-size: 20px;
+}
+
+.botones:active,
+.operacion:active,
+.calcular:active {
+	box-shadow: 0.5px 0.5px 1px rgb(40, 255, 2);
+}
+
+.botones:hover,
+.operacion:hover,
+.calcular:hover {
+	background-color: rgb(208, 208, 178);
+}
+
+.cancelar {
+	background-color: rgb(255, 151, 151);
+	color: rgb(223, 26, 26);
+	width: 100%;
+}
+
+.cancelar:hover {
+	background-color: rgb(253, 97, 97);
+	color: rgb(255, 255, 255);
+	width: 100%;
+}
