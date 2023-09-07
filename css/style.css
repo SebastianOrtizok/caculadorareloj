@@ -21,8 +21,8 @@ h1 {
 .contenedor {
 	display: flex;
 	width: 260px;
-	background-color: rgb(222, 222, 222);
-	box-shadow: 3px 3px 7px rgb(152, 152, 152);
+	background-color: rgba(222, 222, 222, 0);
+	box-shadow: 3px 3px 7px rgba(152, 152, 152, 0);
 	flex-direction: column;
 	margin: 5px auto;
 	align-items: center;
@@ -61,11 +61,11 @@ h1 {
 .operacion,
 .calcular,
 .adorno {
-	background-color: beige;
+	background-color: rgba(245, 245, 220, 0);
 	width: 55px;
 	height: 30px;
 	border-radius: 5px;
-	box-shadow: 1px 1px 4px rgb(135, 135, 135);
+	box-shadow: 1px 1px 4px rgba(135, 135, 135, 0);
 	text-align: center;
 	padding: 5px 0 0 0;
 	user-select: none;
@@ -75,7 +75,7 @@ h1 {
 .restar,
 .multiplicar,
 .dividir {
-	background-color: rgb(232, 232, 198);
+	background-color: rgba(232, 232, 198, 0);
 	color: rgb(0, 8, 255);
 	font-size: 20px;
 }
@@ -95,7 +95,7 @@ h1 {
 .botones:hover,
 .operacion:hover,
 .calcular:hover {
-	background-color: rgb(208, 208, 178);
+	background-color: rgba(208, 208, 178, 0);
 }
 
 .cancelar {

@@ -10,21 +10,34 @@ let operacion;
 let resultado;
 let borrarpantalla = "false";
 let mode=0;
+const fechaActual = new Date();
+const horaActual = fechaActual.getHours();
+const minutosActuales = fechaActual.getMinutes();
+const segundosActuales = fechaActual.getSeconds();
+const dia = fechaActual.getDate().toString().padStart(2, '0');
+const mes = (fechaActual.getMonth() + 1).toString().padStart(2, '0'); // Nota: Los meses en JavaScript son 0-indexados, por lo que sumamos 1.
+const año = fechaActual.getYear();
+
+const fechaCorta = `${dia}/${mes}/${año}`;
+
+function reproducirAudio(audioElement) {
+	audioElement.play();
+}
 
 opcion()
 
 function opcion(){
-    if (mode==0){
-        visor.innerHTML = "HORA";
+    if (mode==0){ //hora
+        visor.innerHTML = horaActual + ":" + minutosActuales + ":" + segundosActuales;
     }
-    if (mode==1){
+    if (mode==1){ //calculadora
         visor.innerHTML = "0";
     }
-    if (mode==2){
+    if (mode==2){ //cronometro
         visor.innerHTML = "CRONOMETRO";
     }
-    if (mode==3){
-        visor.innerHTML = "FECHA";
+    if (mode==3){ //fecha
+        visor.innerHTML = fechaCorta;
         mode=0
     }
 }
@@ -38,7 +51,7 @@ numberButtons.forEach((Element) => {
 		borrarpantalla = "false";
 		const number = Element.textContent;
 		visor.innerHTML += number;
-		audioElement.play();
+		reproducirAudio(audioElement)
 	});
 });
 
@@ -80,7 +93,7 @@ calcular.addEventListener("click", function () {
 		if (operacion == "/") {
 			resultado = number1 / number2;
 		}
-        audioElement.play();
+        reproducirAudio(audioElement)
 		visor.innerHTML = resultado;
 	}
 });
