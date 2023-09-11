@@ -29,6 +29,13 @@ h1 {
 	padding: 2px 0 2px 0;
 }
 
+.visortop {
+font-family: "visorcalculadora";
+position: relative;
+top:0px;
+left: 0px;
+}
+
 .visor {
 	display: flex;
 	background-color: rgb(240, 240, 233);

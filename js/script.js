@@ -1,4 +1,5 @@
 const navegacion = document.getElementById("navegacion");
+const visortop = document.querySelector(".visortop");
 const visor = document.querySelector(".visor");
 const audioElement = document.getElementById("bip");
 
@@ -6,10 +7,19 @@ let mode = 0;
 const fechaActual = new Date();
 let numberButtons; 
 let btncronometro // Almacena los botones para agregar/eliminar event listeners
+let intervaloHora; // Para que finalice el intervalo de segundos y permita pasas a otra funcion 
 
 function reproducirAudio(audioElement) {
   audioElement.play();
 }
+
+//* Dia de la semana
+const numeroDiaSemana = fechaActual.getDay();
+// Array de nombres de días de la semana
+const diasSemana = ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"];
+const nombreDiaSemana = diasSemana[numeroDiaSemana];
+visortop.textContent=nombreDiaSemana
+console.log("dia de la semana " + visortop.textContent)
 
 opcion();
 
@@ -39,7 +49,7 @@ function opcion() {
         cronoboton.removeEventListener("click", manejocronometro);
     });
   }
-
+  clearInterval(intervaloHora);
 
   if (mode == 0) {
     hora();
@@ -57,11 +67,14 @@ function opcion() {
 
 /**Opción 0 HORA */
 function hora() {
-  const horaActual = fechaActual.getHours();
-  const minutosActuales = fechaActual.getMinutes();
-  const segundosActuales = fechaActual.getSeconds();
-  visor.innerHTML = horaActual + ":" + minutosActuales + "    " + segundosActuales;
+    const fechaActual = new Date();
+    const horaActual = fechaActual.getHours();
+    const minutosActuales = String(fechaActual.getMinutes()).padStart(2, "0");
+    const segundosActuales = String(fechaActual.getSeconds()).padStart(2, "0");
+    visor.innerHTML = horaActual + ":" + minutosActuales + "    " + segundosActuales;
 }
+// Actualiza la hora cada segundo
+intervaloHora = setInterval(hora, 1000);
 
 //**Opción 1 CALCULADORA */
 let number1 = 0;
@@ -155,6 +168,7 @@ let iniciar = false;
     if (btncrono==0){
         visor.innerHTML = "00:00 00";
     }
+    reproducirAudio(audioElement);
     actualizarCronometro()
 }
     function actualizarCronometro() {
@@ -191,7 +205,8 @@ let iniciar = false;
 function fecha() {
 	const dia = fechaActual.getDate().toString().padStart(2, "0");
 	const mes = (fechaActual.getMonth() + 1).toString().padStart(2, "0"); // Nota: Los meses en JavaScript son 0-indexados, por lo que sumamos 1.
-	const año = fechaActual.getYear();
-	const fechaCorta = `${dia}/${mes}/${año}`;
+	const año = fechaActual.getFullYear();
+	const fechaCorta = `${dia}/${mes}/${año %100}`;
+    console.log("aca el año: " + fechaCorta)
 	visor.innerHTML = fechaCorta;
 }

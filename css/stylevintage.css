@@ -2,8 +2,8 @@
 
 @font-face {
     font-family: 'visorcalculadora';
-    src: url('fuente/digital-7-webfont.woff2') format('woff2'),
-         url('fuente/digital-7-webfont.woff') format('woff');
+    /* src: url('fuente/digital-7-webfont.woff2') format('woof2'); */
+    src: url('fuente/reloj.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -26,27 +26,31 @@ h1{
 
 	display: flex;
 	width: 260px;
-	box-shadow: 3px 3px 7px rgb(152, 152, 152);
 	flex-direction: column;
 	margin: 5px auto;
 	align-items: center;
 	padding: 2px 0 2px 0;
 }
+.visortop {
+    font-family: "visorcalculadora";
+    position: relative;
+    top: 40px;
+    left: 33px;
+}
 
 .visor {
     display: flex;
-    background-color: #b8dee6e3;
     padding: 6px;
-    font-size: 40px;
+    font-size: 25px;
     font-family: 'visorcalculadora';
     color: rgb(92, 91, 91);
     width: 134px;
-    height: 22px;
+    height: 18px;
     justify-content: flex-end;
-    margin: 58px 25px 0 0;
+    margin: 44px 25px 0 0;
     max-width: 230px;
     overflow: hidden;
-	align-items: center;
+    align-items: center;
 }
 
 .calculadora {
